@@ -1,0 +1,239 @@
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Для Канышай ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:linear-gradient(135deg,#111,#ff0055);
+    color:white;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+.container{
+    padding:30px;
+    position:relative;
+    z-index:2;
+}
+
+h1{
+    font-size:55px;
+    margin-top:20px;
+    text-shadow:0 0 15px #ff0055;
+}
+
+.ff{
+    color:gold;
+    font-size:24px;
+    margin-top:15px;
+    margin-bottom:20px;
+}
+
+.photo{
+    width:260px;
+    max-width:90%;
+    border-radius:20px;
+    margin:10px;
+    box-shadow:0 0 20px rgba(255,255,255,.5);
+}
+
+.message{
+    max-width:800px;
+    margin:20px auto;
+    font-size:22px;
+    line-height:1.8;
+}
+
+.timer-box{
+    margin-top:25px;
+}
+
+.timer-title{
+    font-size:28px;
+    color:gold;
+}
+
+.timer{
+    font-size:35px;
+    margin-top:10px;
+}
+
+.btn{
+    background:#ff0055;
+    color:white;
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
+    font-size:20px;
+    cursor:pointer;
+    margin:10px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+#loveText{
+    display:none;
+    max-width:800px;
+    margin:30px auto;
+    font-size:28px;
+    line-height:1.8;
+    color:#ffd700;
+}
+
+.heart{
+    position:fixed;
+    top:-20px;
+    animation:fall linear forwards;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-20px);
+    }
+    to{
+        transform:translateY(110vh);
+    }
+}
+
+.footer{
+    margin-top:50px;
+    margin-bottom:20px;
+    opacity:.8;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>❤️ Для Канышай ❤️</h1>
+
+<div class="ff">
+🎮 Наша история началась в Free Fire 🎮
+</div>
+
+<!-- ВСТАВЬ СВОИ ФОТО -->
+<img src="photo.png" alt="">
+<div class="message">
+Мы познакомились в Free Fire.<br>
+Сначала были обычные игры, разговоры и совместные катки.<br>
+Но со временем ты стала для меня особенным человеком.<br>
+Спасибо тебе за каждый разговор, каждую улыбку и каждый момент рядом. ❤️
+</div>
+
+<div class="timer-box">
+<div class="timer-title">
+⏳ Сколько мы знакомы
+</div>
+
+<div class="timer" id="days">
+Загрузка...
+</div>
+</div>
+
+<br>
+
+<!-- ВСТАВЬ СВОЮ ССЫЛКУ НА ПЕСНЮ -->
+<button class="btn"
+onclick="window.open('https://treblo.com/song/358a4fec-18a7-40fb-8ad9-d3ae9e459fe3')">
+🎵 Наша песня
+</button>
+
+
+
+<button class="btn" onclick="showLove()">
+💌 Открыть признание
+</button>
+
+<div id="loveText">
+Канышай ❤️<br><br>
+
+Когда мы познакомились, я даже не думал,
+что один человек сможет стать настолько важным для меня.<br><br>
+
+Ты делаешь мои дни ярче,
+а улыбку — искреннее.<br><br>
+
+Спасибо за всё, что между нами было,
+есть и будет. ❤️<br><br>
+
+И сегодня я хочу сказать самое важное...<br><br>
+
+🌹 Канышай, я люблю тебя. 🌹
+</div>
+
+<div class="footer">
+❤️ Жумакадыр & Канышай ❤️
+</div>
+
+</div>
+
+<script>
+
+const startDate = new Date("2025-01-01");
+
+function updateTimer(){
+    const now = new Date();
+
+    const diff = now - startDate;
+
+    const days = Math.floor(
+        diff / (1000 * 60 * 60 * 24)
+    );
+
+    document.getElementById("days").innerHTML =
+        days + " дней ❤️";
+}
+
+updateTimer();
+
+function showLove(){
+    document.getElementById("loveText").style.display = "block";
+}
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "❤️";
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (20 + Math.random() * 30) + "px";
+
+    heart.style.animationDuration =
+        (3 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+
+setInterval(createHeart, 250);
+
+</script>
+
+</body>
+</html>
+```
